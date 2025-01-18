@@ -6,6 +6,7 @@ table, th, td{
     border: 1px solid black;
     text-align: center;
     padding: 3px;
+    background-color: white;
 }
 table{
     table-layout: fixed;
@@ -28,7 +29,8 @@ body{
     background-repeat: repeat;
     margin: 0;
     font-size: 25px;
-    margin-left: 10px;
+    margin-left: 10px; 
+    font-family:'Courier New', Courier, monospace ;
 }
 header{
     font-size: 30px;
