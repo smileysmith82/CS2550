@@ -19,24 +19,25 @@ Reflection (1-2 paragraphs):
 <head>
     <title>About Jared Smith</title>
     <link href="mystyle.css" rel="stylesheet">
-
-	
-    <style>
-
+	<style>
     </style>
-
-    
 </head>
 
 <body>
+    <div class="content-wrapper">
     <main>
         
         <header>
             <h1 class="center-text">Jared Smith</h1>
         </header>
 
-        <img src="PictureofMe.jpg" width ="400" height = "500" align="right">
+        <img id = "profilePic" src="PictureofMe.jpg" width ="200" height = "250" alt="Profile Picture">
 
+        <div id ="imageModal" class="modal">
+            <span class="close"> &times;</span>
+            <img class="modal-content" id="largeImage">
+        </div>
+        
         <h2>Personal Info: </h2>
         <ul>
             <li><strong>Major:</strong> Computer Science  </li>
@@ -51,14 +52,14 @@ Reflection (1-2 paragraphs):
         <!--Favorite books are in the best Order I could Figure-->
         <h2> My five favorite books</h2>
         <ol>
-            <li><em>Lord of the Rings</em>: J.R.R. Tolkien</li>
-            <li><em>Adventurers Wanted</em>: M.L. Forman</li>
-            <li><em>Mistborn</em>: Brandon Sanderson</li>
-            <li><em>Eragon</em>: Christopher Paolini</li>
-            <li><em>The Chronicles of Narnia</em>: C.S. Lewis</li>
+            <li><em>Lord of the Rings</em>:<a href = "https://www.tolkiensociety.org/discover/biography/" target="_blank"> J.R.R. Tolkien</a></li>
+            <li><em>Adventurers Wanted</em>:<a href = "https://shadowmountain.com/author-book/m-l-forman/" target="_blank"> M.L. Forman</a></li>
+            <li><em>Mistborn</em>:<a href = "https://www.brandonsanderson.com/" target="_blank"> Brandon Sanderson</a></li>
+            <li><em>Eragon</em>:<a href = "https://www.paolini.net/" target="_blank"> Christopher Paolini</a></li>
+            <li><em>The Chronicles of Narnia</em>:<a href = "https://www.cslewisinstitute.org/c-s-lewis-life-works/" target="_blank"> C.S. Lewis</a> </li>
         </ol>
         <!-- Haiku/Limmerick-->
-
+        
         <h2 class="center-text">From Flying to Falling</h2>
         <p class="center-text">I wrote this because I love skiing and am excited to ski this year.</p>
          <p class="center-text"><em> There once was a skier named Bob</em></p>
@@ -71,7 +72,7 @@ Reflection (1-2 paragraphs):
          <h2>My personal interests</h2>
          <p>I am currently attending UVU to get a degree in computer science because I want to create <a href = "https://github.com/smileysmith82/myproject" target="_blank">games</a>. 
             This is something that I love to do because I love to see how everything starts working together and it is fun to see the ripples of little changes.
-        I also love that games can be a creative outlet for a lot of other hobbies including coding, writing and drawing. 
+            I also love that games can be a creative outlet for a lot of other hobbies including coding, writing and drawing. 
         </p>
 
         <p> Another one of my hobbies is writing. I currently am writing a book that I have been working on since high school. 
@@ -85,6 +86,7 @@ Reflection (1-2 paragraphs):
         <h2 class="center-text">Class schedule</h2>
         
         <table>
+            <col><col><col><col><col><col>
             <tr>
                 <th></th>
                 <th>Monday</th>
@@ -214,9 +216,31 @@ Reflection (1-2 paragraphs):
                 <td></td>
             </tr>         
         </table>
+    </main>
+</div>
 
         
-       
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    var modal = document.getElementById("imageModal");
+    var img = document.getElementById("profilePic");
+    var modalImg = document.getElementById("largeImage");
+    var closeBtn = document.querySelector(".close")
+
+    img.onclick = function(){
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+    };
+    closeBtn.onclick = function(){
+        modal.style.display = "none";
+    };
+    modal.onclick = function(event){
+        if (event.target ===modal){
+            modal.style.display= "none";
+        }
+    };
+});
+</script>       
 
 
 </body>
