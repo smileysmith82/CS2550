@@ -1,0 +1,156 @@
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: end;
+    background-image: linear-gradient(to right, darkred , rgb(170, 170, 81));
+    color:white;
+    padding:1rem;
+    position: fixed;
+    width: 100%;
+    top:0;
+    z-index: 1000;
+    height: 120px;
+}
+header h1{
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+
+
+.center-text{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    clear: both;
+}
+body{
+    font-family:'Courier New', Courier, monospace ;
+    margin:0;
+    padding:0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+#logo {
+    height: 60px;
+    width: auto;
+    cursor: pointer;
+    flex: 1;
+    max-width: 160px;
+
+}
+
+button, #logo {
+    flex:1;
+    text-align: center;
+    max-width: 150px;
+}
+button{
+    padding: 10px 0px;
+    border: none;
+    background-color: rgb(210, 181, 14);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background: black;
+}
+button.active {
+    color: rgb(112, 112, 49);
+    text-decoration: underline;
+    font-weight: bold;
+}
+main{
+    max-width: 800px;
+    width: 100%;
+    margin-top: 120px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.hidden{
+    display: none;
+}
+
+figure{
+
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    background-image: linear-gradient(to right, darkred , rgb(170, 170, 81));
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    
+}
+
+@media (max-width: 768px){
+    header{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul{
+        flex-direction: column;
+    }
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+.wizard-container {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+    flex-wrap: wrap;
+}
+
+#wizard {
+    width: 160px; 
+    height: auto;
+}
+
+.hidden-link {
+    position: fixed;  /* Keeps the link fixed at the bottom corner */
+    bottom: 20px;  /* 20px from the bottom of the page */
+    right: 20px;   /* 20px from the right of the page */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for visibility */
+    color: white;  /* White text color */
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;  /* Removes the underline */
+    opacity: 0;  /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;  /* Smooth transition for the hover effect */
+}
+
+.hidden-link:hover {
+    opacity: 1;  /* Make it visible when hovered */
+}
