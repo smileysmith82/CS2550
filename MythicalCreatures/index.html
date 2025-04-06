@@ -1,9 +1,4 @@
-<!--
-Dragon Image: 1019 px width: 1510 px
-Griffin Image:640 px width: 496 px
-Phoenix Image: 720 px width: 480 px
--->
-<!DOCTYPE html>
+
 <!--Project:  Project1-About Me
 Name: Jared Smith
 Submitted: 
@@ -14,7 +9,20 @@ code from any other source, providing source code to another student,
 or leaving my code on a public web site constitutes cheating.
 I acknowledge that  If I am found in violation of this policy this may result
 in a zero grade, a permanent record on file and possibly immediate failure of the class.
+
+
+Changes:
+I changed the footer a lot and centered the content a lot better. I also made the youtube video always visible.
+
+--SELF GRADE--
+REFACTOR CSS-FIX       A 
+CSS THEME              B
+CSS THEME TOGGLE     A
+MOBILE RESPONSIVE     A
+
+ADDITIONAL COMMENTS: I didn't create a new file for the changes, but I added them at the bottom most of the time.
 -->
+<!DOCTYPE html>
 <html lang ="en">
 <head>
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,82 +32,86 @@ in a zero grade, a permanent record on file and possibly immediate failure of th
 </head>
 
 <body>
-<header>
-    
-    <h1 class="center-text">Mythical Creatures</h1>
-    <nav>
-        <img id="logo" src = "Images/pageLogo.png" alt="Mythical Creatures Logo">
-        <button onclick="showSection('dragon')">Dragon</button>
-        <button onclick="showSection('griffin')">Griffin</button>
-        <button onclick="showSection('phoenix')">Phoenix</button>
-    </nav>
-</header>
-<main>
-    <section id="home">
-        <div class="wizard-container">
-            <img id="wizard" src="Images/Wizard.jpg" alt="Wizard Guide">
-            <div class="wizard-text">
-                <h2 class="center-text">Welcome to the World of Mythical Creatures</h2>
-                <p class="center-text">Explore the legends of various mythical beings;</p>
-                <p class="center-text">where they come from and what they are</p>
-            </div>
-        </div>
+    <header>
         
-    </section>
+        <h1 class="center-text">Mythical Creatures</h1>
+        <nav>
+            <img id="logo" src = "Images/pageLogo.png" alt="Mythical Creatures Logo">
 
-    <section id="dragon" class="hidden">
-        <h2 class="center-text">The Mighty Dragon</h2>
-        <p class="center-text">Dragons are legendary creatures found in folklore worldwide, often depicted as powerful, fire-breathing reptiles.
-            They originated in 6200 BC in both Chinese and Mesopotamian culture. They have always been revered and feared.
-            They are often depicted in modern culture surrounded by mountains of gold and precious things.  
-        </p>
-        <figure>
-            <picture>
-                <source srcset="Images/smallDragon.jpg" media="(max-width: 768px)">
-                <img src="Images/Dragon.jpg" alt="Dragon">
-            </picture>
-            <figcaption>The might dragon soaring through the air</figcaption>
-        </figure>
-    </section>
+            <button onclick="showSection('dragon')">Dragon</button>
+            <button onclick="showSection('griffin')">Griffin</button>
+            <button onclick="showSection('phoenix')">Phoenix</button>
+            
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="wizard-container">
+                <img id="wizard" src="Images/Wizard.jpg" alt="Wizard Guide">
+                <div class="wizard-text">
+                    <h2 class="center-text">Welcome to the World of Mythical Creatures</h2>
+                    <p class="center-text">Explore the legends of various mythical beings;</p>
+                    <p class="center-text">where they come from and what they are</p>
+                </div>
+            </div>
+            
+        </section>
 
-    <section id="phoenix" class="hidden">
-        <h2 class="center-text">The Immortal Phoenix</h2>
-        <p class="center-text">
-            The Phoenix is a legendary bird known for its cycle of death and rebirth. 
-            Found in ancient Egyptian, Greek, and Chinese mythology, the Phoenix is said to burst into flames upon death, 
-            only to rise from its own ashes, renewed and stronger. This magnificent creature symbolizes immortality, 
-            resilience, and the eternal cycle of life.
-        </p>
-        <figure>
-            <picture>
-                <source srcset="Images/smallPhoenix.jpg" media="(max-width: 768px)">
-                <img src ="Images/Phoenix.jpg" alt="Phoenix">
-            </picture>
-            <figcaption>A bird that rises form its ashes.</figcaption>
-        </figure>
-    </section>
+        <section id="dragon" class="hidden">
+            <h2 class="center-text">The Mighty Dragon</h2>
+            <p class="center-text">Dragons are legendary creatures found in folklore worldwide, often depicted as powerful, fire-breathing reptiles.
+                They originated in 6200 BC in both Chinese and Mesopotamian culture. They have always been revered and feared.
+                They are often depicted in modern culture surrounded by mountains of gold and precious things.  
+            </p>
+            <figure>
+                <picture>
+                    <source srcset="Images/smallDragon.jpg" media="(max-width: 768px)">
+                    <img src="Images/Dragon.jpg" alt="Dragon">
+                </picture>
+                <figcaption>The might dragon soaring through the air</figcaption>
+            </figure>
+        </section>
 
-    <section id="griffin" class="hidden">
-        <h2 class="center-text">The Majestic Griffin</h2>
-        <p class="center-text">
-            The Griffin, a majestic hybrid of an eagle and a lion, is a creature of wisdom and strength. 
-            Originating in ancient Mesopotamian and Greek mythology, it is often depicted as a guardian of treasure 
-            and a symbol of divine power. With the keen eyesight of an eagle and the courage of a lion, 
-            the Griffin is revered as a noble protector of kings and sacred places.
-        </p>
-        <figure>
-            <picture>
-                <source srcset="Images/smallGriffin.jpg" media="(max-width: 768px)">
-                <img src="Images/Griffin.jpg" alt="Griffin">
-            </picture>
-            <figcaption>Half-lion, half-eagle, a creature of great wisdom.</figcaption>
-        </figure>
-    </section>
-</main>
+        <section id="phoenix" class="hidden">
+            <h2 class="center-text">The Immortal Phoenix</h2>
+            <p class="center-text">
+                The Phoenix is a legendary bird known for its cycle of death and rebirth. 
+                Found in ancient Egyptian, Greek, and Chinese mythology, the Phoenix is said to burst into flames upon death, 
+                only to rise from its own ashes, renewed and stronger. This magnificent creature symbolizes immortality, 
+                resilience, and the eternal cycle of life.
+            </p>
+            <figure>
+                <picture>
+                    <source srcset="Images/smallPhoenix.jpg" media="(max-width: 768px)">
+                    <img src ="Images/Phoenix.jpg" alt="Phoenix">
+                </picture>
+                <figcaption>A bird that rises form its ashes.</figcaption>
+            </figure>
+        </section>
 
-<footer>
-    <p>&copy; 2025 Mythical Creatures Website</p>
-    <a href="https://www.youtube.com/watch?v=CeiW-vWias0&t=6s" target="_blank" class="hidden-link">YouTube Link</a>
-</footer>
+        <section id="griffin" class="hidden">
+            <h2 class="center-text">The Majestic Griffin</h2>
+            <p class="center-text">
+                The Griffin, a majestic hybrid of an eagle and a lion, is a creature of wisdom and strength. 
+                Originating in ancient Mesopotamian and Greek mythology, it is often depicted as a guardian of treasure 
+                and a symbol of divine power. With the keen eyesight of an eagle and the courage of a lion, 
+                the Griffin is revered as a noble protector of kings and sacred places.
+            </p>
+            <figure>
+                <picture>
+                    <source srcset="Images/smallGriffin.jpg" media="(max-width: 768px)">
+                    <img src="Images/Griffin.jpg" alt="Griffin">
+                </picture>
+                <figcaption>Half-lion, half-eagle, a creature of great wisdom.</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p class = "footer-text">&copy; 2025 Mythical Creatures Website</p>
+        <a href="https://www.youtube.com/watch?v=CeiW-vWias0&t=6s" target="_blank" class="hidden-link">YouTube Link</a>
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+    </footer>
 </body>
+
 </html>
