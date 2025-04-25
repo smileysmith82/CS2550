@@ -1,5 +1,4 @@
-
-<!--Project:  Project1-About Me
+<!--Project:  Personal Website
 Name: Jared Smith
 Submitted: 
  
@@ -12,23 +11,20 @@ in a zero grade, a permanent record on file and possibly immediate failure of th
 
 
 Changes:
-I changed the footer a lot and centered the content a lot better. I also made the youtube video always visible.
 
---SELF GRADE--
-REFACTOR CSS-FIX       A 
-CSS THEME              B
-CSS THEME TOGGLE     A
-MOBILE RESPONSIVE     A
+I added the form and credited the illistrators for the pictures
 
-ADDITIONAL COMMENTS: I didn't create a new file for the changes, but I added them at the bottom most of the time.
 -->
 <!DOCTYPE html>
 <html lang ="en">
 <head>
+    <meta charset="UTF-8"/>
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mythical Creatures</title>
     <link rel = "stylesheet" href="CSS/styles.css">
+    <script defer src="JavaScript/validation.js"></script>
     <script defer src="JavaScript/script.js"></script>
+    <script defer src="JavaScript/main.js"></script>
 </head>
 
 <body>
@@ -41,7 +37,7 @@ ADDITIONAL COMMENTS: I didn't create a new file for the changes, but I added the
             <button onclick="showSection('dragon')">Dragon</button>
             <button onclick="showSection('griffin')">Griffin</button>
             <button onclick="showSection('phoenix')">Phoenix</button>
-            
+            <button onclick="showSection('myform-section')">Log Visit</button>
         </nav>
     </header>
     <main>
@@ -50,8 +46,8 @@ ADDITIONAL COMMENTS: I didn't create a new file for the changes, but I added the
                 <img id="wizard" src="Images/Wizard.jpg" alt="Wizard Guide">
                 <div class="wizard-text">
                     <h2 class="center-text">Welcome to the World of Mythical Creatures</h2>
-                    <p class="center-text">Explore the legends of various mythical beings;</p>
-                    <p class="center-text">where they come from and what they are</p>
+                    <p class="center-text">Explore the legends of various mythical beings,</p>
+                    <p class="center-text">where they come from, and what they are.</p>
                 </div>
             </div>
             
@@ -68,7 +64,7 @@ ADDITIONAL COMMENTS: I didn't create a new file for the changes, but I added the
                     <source srcset="Images/smallDragon.jpg" media="(max-width: 768px)">
                     <img src="Images/Dragon.jpg" alt="Dragon">
                 </picture>
-                <figcaption>The might dragon soaring through the air</figcaption>
+                <figcaption>The mighty dragon soaring through the air.</figcaption>
             </figure>
         </section>
 
@@ -85,7 +81,7 @@ ADDITIONAL COMMENTS: I didn't create a new file for the changes, but I added the
                     <source srcset="Images/smallPhoenix.jpg" media="(max-width: 768px)">
                     <img src ="Images/Phoenix.jpg" alt="Phoenix">
                 </picture>
-                <figcaption>A bird that rises form its ashes.</figcaption>
+                <figcaption>A bird that rises from its ashes.</figcaption>
             </figure>
         </section>
 
@@ -102,16 +98,98 @@ ADDITIONAL COMMENTS: I didn't create a new file for the changes, but I added the
                     <source srcset="Images/smallGriffin.jpg" media="(max-width: 768px)">
                     <img src="Images/Griffin.jpg" alt="Griffin">
                 </picture>
-                <figcaption>Half-lion, half-eagle, a creature of great wisdom.</figcaption>
+                <figcaption>Half-lion, half-eagle; a creature of great wisdom.</figcaption>
             </figure>
+        </section>
+        <section id="myform-section" class="hidden">
+            
+            <h2 class="center-text" class>Visitor Registration</h2>
+            <form id="myform" novalidate>
+                <div class="form-row"> <!--First Name -->
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" required>
+                    <span class="errorMsg"></span>
+                </div>
+                
+                <div class="form-row"> <!--Last Name-->
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname" required>
+                    <span class="errorMsg"></span>
+                </div>
+
+                <div class="form-row"> <!--Phone -->
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone" required />
+                    <span class="errorMsg"></span>
+                </div>
+
+                <div class="form-row"> <!-- Email -->
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                    <span class="errorMsg"></span>
+                </div>
+
+                <h3>Address</h3>
+                <div class="form-row"> <!-- Address -->
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                    <span class="errorMsg"></span>
+                </div>
+                <div class="form-row"> <!-- City -->
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                    <span class="errorMsg"></span>
+                </div>
+                <div class="form-row"> <!-- State -->
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" required>
+                    <span class="errorMsg"></span>
+                </div>
+                <div class="form-row"> <!-- ZIP -->
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" id="zip" name="zip" required>
+                    <span class="errorMsg"></span>
+                </div>     
+
+                <fieldset>
+                    <legend>How did you find my page?</legend>
+                    <label><input type="checkbox" name="referral" value="internet">Internet</label>
+                    <label><input type="checkbox" name="referral" value="friend">Friend</label>
+                    <label><input type="checkbox" name="referral" value="google">Google</label>
+                    <label><input type="checkbox" name="referral" value="other">Other</label>
+                    <div id="referral-error" class="errorMsg"></div>    
+                </fieldset>    
+                
+                <div class="form-row">
+                    <label for="comments">Leave a comment:</label><br>
+                    <textarea id="comments" name="comments" rows="4" cols = 50></textarea>
+                </div>
+
+                <button id="submitBtn" type="submit">Submit</button>
+                
+          </form>
+        </section>
+
+        <section id="thank-you" class="hidden">
+            <h2>Thank you for your submission!</h2>
+            <p>We appreciate your visit.</p>
+            <button onclick="goToHomePage()">Close</button>
         </section>
     </main>
 
     <footer>
         <p class = "footer-text">&copy; 2025 Mythical Creatures Website</p>
+
         <a href="https://www.youtube.com/watch?v=CeiW-vWias0&t=6s" target="_blank" class="hidden-link">YouTube Link</a>
         <button onclick="toggleDarkMode()">Dark Mode</button>
     </footer>
 </body>
 
+
+<!--Photo Credit:
+Wizard: https://www.art.com/products/p55787779437-sa-i11101701/kirk-reinert-the-wizard.htm?RFID=622002&utm_medium=cpc&utm_source=google&campaignid=17917933428&utm_campaign=ART_Google_Shopping_pMax_NonBrand_NonServiced%20Items%20-%20Print%20Only&gad_source=1&gbraid=0AAAAAD_JNKCL6lmGe4siNF4CklVYDutqh&gclid=Cj0KCQjw5azABhD1ARIsAA0WFUHXxm9g4Rke2agmGQ6jNIrjPHhsqQIbRhRxEp0-BQcfZ_EzgjXc3qgaAq0FEALw_wcB
+Dragon: https://cricketmedia.com/blog/dragons-from-around-the-world/   Emily Fiegenschuh
+Phoenix: https://www.artmajeur.com/zoher-husain-shafique/en/artworks/16886983/phoenix-bird-of-fiery-rebirth#original
+Griffin: Art by Ryan Sanders https://www.facebook.com/homerikofficial/photos/art-by-ryan-sandersgriffin-the-griffin-griffon-or-gryphon-greek-%CE%B3%CF%81%CF%8D%CF%86%CF%89%CE%BD-gr%C3%BDph%C5%8Dn-o/2732107127014693/?locale=pt_BR&_rdr
+-->
 </html>

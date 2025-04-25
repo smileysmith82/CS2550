@@ -1,11 +1,10 @@
-/*I added a page turn animation to the website so that if you go from left to right, the page turn starts from the right
-
-I also added the dark mode toggle*/
+/*I made ti so that when the form is submitted it takes the user back to the home page*/
 let currentSection = "home";
 
 function showSection(sectionId){
-    const sectionOrder = ["home", "dragon", "griffin", "phoenix"];
+    if (sectionId === currentSection) return;
 
+    const sectionOrder = ["home", "dragon", "griffin", "phoenix", "visitor-form"];
     const currentIndex = sectionOrder.indexOf(currentSection);
     const targetIndex = sectionOrder.indexOf(sectionId)
     const direction = targetIndex > currentIndex ? "forward" : "backward";
@@ -44,10 +43,6 @@ function showSection(sectionId){
     });
 }
 
-document.getElementById("logo").addEventListener("click", function(){
-    showSection("home");
-})
-
 function toggleDarkMode(){
     document.body.classList.toggle("dark-mode");
 
@@ -58,9 +53,17 @@ function toggleDarkMode(){
     }
 }
 
+document.getElementById("logo").addEventListener("click", function(){
+    showSection("home");
+})
+
 window.onload = function () {
     if (localStorage.getItem("theme")=="dark"){
         document.body.classList.add("dark-mode");
-    }
+    }    
+}
 
+function goToHomePage() {
+    document.getElementById('thank-you').classList.add('hidden');
+    window.location.href = "/"
 }
